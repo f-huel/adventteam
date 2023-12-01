@@ -1,0 +1,12 @@
+[module "08b3ef74-3753-358e-b215-b56820953447"]
+	conflict = request-pull
+	path = Felix
+	pull = merge subtree
+	pull = squash never
+	ref = if refs/heads/main sync refs/heads/main
+	url = agnostic://gh/726086399
+[map "f9520087-abe3-38c9-964a-eb36685c00f1"]
+	object = f270f3e740414a4a3f7086276098c72d86392ade
+	path = Felix
+	stage = sync
+	type = extract module
