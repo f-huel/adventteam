@@ -1,9 +1,13 @@
 <?php
 
 function calculateCalibrationValue($line) {
-    $firstDigit = intval($line[0]);
-    $lastDigit = intval(substr($line, -1));
-    $calibrationValue = $firstDigit * 10 + $lastDigit;
+    preg_match('/\d/', $line, $matches);
+    $firstDigit = intval($matches[0]);
+
+    preg_match('/\d/', strrev($line), $matches);
+    $lastDigit = intval($matches[0]);
+
+    $calibrationValue = intval($firstDigit . $lastDigit);
 
     return $calibrationValue;
 }
@@ -16,13 +20,14 @@ $totalCalibrationValue = 0;
 foreach ($rows as $row) {
     if (count($row) > 0) {
         $line = $row[0];
+
         $calibrationValue = calculateCalibrationValue($line);
-        echo "$calibrationValue\n";
+
+        echo "Calibration value for '$line': $calibrationValue\n";
 
         $totalCalibrationValue += $calibrationValue;
     }
 }
 
 echo "Total Calibration Value: $totalCalibrationValue\n";
-
 ?>
