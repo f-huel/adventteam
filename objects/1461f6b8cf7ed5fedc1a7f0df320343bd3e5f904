@@ -1,0 +1,24 @@
+[map "5032a677-6331-31ae-ac3f-dcbde501501d"]
+	object = c0870e877cc9cf533ede67fcbb7c0fdc933ec377
+	path = Mehdi
+	stage = sync
+	type = extract module
+[module "4ea138db-4d01-3700-9a92-c04d65869727"]
+	conflict = request-pull
+	path = Mehdi
+	pull = merge subtree
+	pull = squash never
+	ref = if refs/heads/main sync refs/heads/main
+	url = agnostic://gh/726106290
+[module "08b3ef74-3753-358e-b215-b56820953447"]
+	conflict = request-pull
+	path = Felix
+	pull = merge subtree
+	pull = squash never
+	ref = if refs/heads/main sync refs/heads/main
+	url = agnostic://gh/726086399
+[map "ef2e17f7-9bb4-38bb-9225-a06e3c99ca7c"]
+	object = 5747b4cbf38e222ccf73d6f32acc782490b61a90
+	path = Felix
+	stage = sync
+	type = extract module
