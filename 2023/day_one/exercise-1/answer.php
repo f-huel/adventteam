@@ -17,7 +17,7 @@ foreach ($rows as $row) {
     if (count($row) > 0) {
         $line = $row[0];
         $calibrationValue = calculateCalibrationValue($line);
-        echo "Calibration value for '$line': $calibrationValue\n";
+        echo "$calibrationValue\n";
 
         $totalCalibrationValue += $calibrationValue;
     }
