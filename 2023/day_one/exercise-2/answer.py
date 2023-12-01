@@ -1,23 +1,28 @@
-import csv
 import re
 
-def calculate_calibration_value(line):
-    first_digit = int(re.search(r'\d', line).group())
-    last_digit = int(re.search(r'\d', line[::-1]).group())
-    calibration_value = int(str(first_digit) + str(last_digit))
-    return calibration_value
+with open("input.csv") as f:
+    data = f.read().strip()
 
-csv_file_path = "input.csv"
-with open(csv_file_path, 'r') as file:
-    rows = list(csv.reader(file))
 
-total_calibration_value = 0
+def calibration(data):
+    ls = data.split("\n")
+    ns = [re.findall("\d", x) for x in ls]
+    return sum(int(n[0] + n[-1]) for n in ns)
 
-for row in rows:
-    if row:
-        line = row[0]
-        calibration_value = calculate_calibration_value(line)
-        print(f"Calibration value for '{line}': {calibration_value}")
-        total_calibration_value += calibration_value
 
-print(f"Total Calibration Value: {total_calibration_value}")
+# Part 1
+print(calibration(data))
+
+# Part 2
+data = (
+    data.replace("one", "one1one")
+    .replace("two", "two2two")
+    .replace("three", "three3three")
+    .replace("four", "four4four")
+    .replace("five", "five5five")
+    .replace("six", "six6six")
+    .replace("seven", "seven7seven")
+    .replace("eight", "eight8eight")
+    .replace("nine", "nine9nine")
+)
+print(calibration(data))
