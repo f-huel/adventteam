@@ -3,7 +3,6 @@
 $board = file('input.txt', FILE_IGNORE_NEW_LINES);
 $chars = [];
 
-// Part 1
 for ($r = 0; $r < 140; $r++) {
     for ($c = 0; $c < 140; $c++) {
         if (!in_array($board[$r][$c], ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'])) {
