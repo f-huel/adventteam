@@ -2,7 +2,7 @@
 $input = file('input.txt', FILE_IGNORE_NEW_LINES);
 
 function has_symbol($char) {
-    return (str_contains($char, '*') || str_contains($char, '#') || str_contains($char, '$') || str_contains($char, '+'));
+    return (!(is_numeric($char) || (strspn($char, '.') == strlen($char))));
 }
 
 $sum = 0;
@@ -43,18 +43,41 @@ for ($i = 0; $i < count($input); $i++) {
                     $symbolflag = true;
                 }
             }
-            if (isset($input[($starti - 1)][($endj + 1)])) {
-                if (has_symbol($input[($starti - 1)][($endj + 1)])) {
-                    $symbolflag = true;
+            if (strlen((string)$currentnumber) == 1) {
+                if (isset($input[($starti - 1)][($startj + 1)])) {
+                    if (has_symbol($input[($starti - 1)][($startj + 1)])) {
+                        $symbolflag = true;
+                    }
+                }
+                if (isset($input[($starti + 1)][($startj + 1)])) {
+                    if (has_symbol($input[($starti + 1)][($startj + 1)])) {
+                        $symbolflag = true;
+                    }
+                }
+                if (isset($input[$starti][($startj + 1)])) {
+                    if (has_symbol($input[$starti][($startj + 1)])) {
+                        $symbolflag = true;
+                    }
+                }
+            } else {
+                if (isset($input[($starti - 1)][($endj + 1)])) {
+                    if (has_symbol($input[($starti - 1)][($endj + 1)])) {
+                        $symbolflag = true;
+                    }
+                }
+                if (isset($input[($starti + 1)][($endj + 1)])) {
+                    if (has_symbol($input[($starti + 1)][($endj + 1)])) {
+                        $symbolflag = true;
+                    }
+                }
+                if (isset($input[$starti][($endj + 1)])) {
+                    if (has_symbol($input[$starti][($endj + 1)])) {
+                        $symbolflag = true;
+                    }
                 }
             }
             if (isset($input[$starti][($startj - 1)])) {
                 if (has_symbol($input[$starti][($startj - 1)])) {
-                    $symbolflag = true;
-                }
-            }
-            if (isset($input[$starti][($endj + 1)])) {
-                if (has_symbol($input[$starti][($endj + 1)])) {
                     $symbolflag = true;
                 }
             }
@@ -68,20 +91,12 @@ for ($i = 0; $i < count($input); $i++) {
                     $symbolflag = true;
                 }
             }
-            if (isset($input[($starti + 1)][($endj + 1)])) {
-                if (has_symbol($input[($starti + 1)][($endj + 1)])) {
-                    $symbolflag = true;
-                }
-            }
 
-            
             if ($symbolflag) {
                 $sum += (int)$currentnumber;
                 $currentnumber = 0;
-                echo "Added $currentnumber\n";
             }
         }
-        echo "$char at value: $sum with $symbolflag\n";
     }
 }
-echo $sum;
+echo "Sum: $sum\n";

@@ -14,3 +14,20 @@ I will just keep a counter to know on what line I am for [i].\
 After struggling for hours on end trying to save 3 rotating lines in C I have decided to switch to PHP.
 
 ## PHP
+I guess I will just nest a few explodes, rotate 3 lines and implement the same logic I had planned for C.\
+It's been a few hours and I'm now in what I can only describe as Exception Hell.\
+I finally finished Exception Hell thanks to the help of some people over at the Discord.\
+This code is not very pretty. At all
+
+## Usage
+Per usual I will give u a small guide to use my script for your answer. This will only provide you with part 1.\
+You will need PHP installed on your computer.
+
+### Step 1
+Put your input in a file named 'temp.txt'
+
+### Step 2
+Run: <p>./compat.bash > input.txt</p>
+
+### Step 3
+Run: <p>php program.php</p>
