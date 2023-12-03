@@ -43,8 +43,8 @@ for ($i = 0; $i < count($input); $i++) {
                     $symbolflag = true;
                 }
             }
-            if (isset($input[($starti - 1)][($startj + 1)])) {
-                if (has_symbol($input[($starti - 1)][($startj + 1)])) {
+            if (isset($input[($starti - 1)][($endj + 1)])) {
+                if (has_symbol($input[($starti - 1)][($endj + 1)])) {
                     $symbolflag = true;
                 }
             }
@@ -53,8 +53,8 @@ for ($i = 0; $i < count($input); $i++) {
                     $symbolflag = true;
                 }
             }
-            if (isset($input[$starti][($startj + 1)])) {
-                if (has_symbol($input[$starti][($startj + 1)])) {
+            if (isset($input[$starti][($endj + 1)])) {
+                if (has_symbol($input[$starti][($endj + 1)])) {
                     $symbolflag = true;
                 }
             }
@@ -68,8 +68,8 @@ for ($i = 0; $i < count($input); $i++) {
                     $symbolflag = true;
                 }
             }
-            if (isset($input[($starti + 1)][($startj + 1)])) {
-                if (has_symbol($input[($starti + 1)][($startj + 1)])) {
+            if (isset($input[($starti + 1)][($endj + 1)])) {
+                if (has_symbol($input[($starti + 1)][($endj + 1)])) {
                     $symbolflag = true;
                 }
             }
@@ -77,6 +77,8 @@ for ($i = 0; $i < count($input); $i++) {
             
             if ($symbolflag) {
                 $sum += (int)$currentnumber;
+                $currentnumber = 0;
+                echo "Added $currentnumber\n";
             }
         }
         echo "$char at value: $sum with $symbolflag\n";
