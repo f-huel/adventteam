@@ -7,3 +7,10 @@ Since we wont know the size of the number we have to use the difference in the s
 So the number location will be [i][js] => [i][je] and the locations that must be checked are [i-1][js-1] => [i-1][je+1], [i][js-1]\
 [i][je+1], [i+1][js-1] => [i+1][je+1].\
 I will most likely be doing this in C again.
+
+## C
+I have no idea how to use multidimensional arrays in C.\
+I will just keep a counter to know on what line I am for [i].\
+After struggling for hours on end trying to save 3 rotating lines in C I have decided to switch to PHP.
+
+## PHP
