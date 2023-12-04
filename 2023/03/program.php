@@ -32,7 +32,7 @@ for ($i = 0; $i < count($input); $i++) {
             $symbolflag = false;
             $numberflag = true;
 
-            // Check surroundings for symbols
+            // Check surroundings for symbols using Exception Hell
             if (isset($input[($starti - 1)][($startj - 1)])) {
                 if (has_symbol($input[($starti - 1)][($startj -1)])) {
                     $symbolflag = true;
